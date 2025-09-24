@@ -1,4 +1,4 @@
-# project-sweep
+# Project Sweep
 This is Minesweeper. The game logic will be coded in JS, the UI will be made in React, the high scores will be recorded in a PostgreSQL, and I will use GitHub for version control and to employ a CI/CD workflow. I have surveyed the programming jobs in my area and I am making this project to employ as many of them as possible and feasible.
 
 ## MINIMUM VIABLE PRODUCT
@@ -20,9 +20,9 @@ This is Minesweeper. The game logic will be coded in JS, the UI will be made in 
 
 ## TODO
 - [ ] Grid with numbers & mines
-    - [ ] Grid
-    - [ ] Mine placement
-    - [ ] Number placement
+    - [x] Grid
+    - [x] Mine placement
+    - [x] Number placement
 - [ ] Revealing the numbers & mines
     - [ ] Take user input
     - [ ] Display numbers & mines
