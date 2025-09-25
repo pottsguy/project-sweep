@@ -19,10 +19,14 @@ This is Minesweeper. The game logic will be coded in JS, the UI will be made in 
 # WORKFLOW
 
 ## TODO
-- [ ] Grid with numbers & mines
+- [x] Grid with numbers & mines
     - [x] Grid
     - [x] Mine placement
     - [x] Number placement
+    - [x] Make createGrid() function
+    - [x] Make placeMine() function
+    - [x] Make placeNumbers() function
+    - [x] Make generateMinefield() function
 - [ ] Revealing the numbers & mines
     - [ ] Take user input
     - [ ] Display numbers & mines
