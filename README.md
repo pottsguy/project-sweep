@@ -27,9 +27,10 @@ This is Minesweeper. The game logic will be coded in JS, the UI will be made in 
     - [x] Make placeMine() function
     - [x] Make placeNumbers() function
     - [x] Make generateMinefield() function
-- [ ] Revealing the numbers & mines
-    - [ ] Take user input
-    - [ ] Display numbers & mines
+- [x] Revealing the numbers & mines
+    - [x] Take user input
+    - [x] Make identify the chosen cell
+    - [x] Display numbers & mines
 - [ ] Create end-game condition
 - [ ] Flagging cells
 - [ ] Create win condition

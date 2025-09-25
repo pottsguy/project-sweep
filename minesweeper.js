@@ -62,6 +62,42 @@ function placeNumbers(grid) {
     }
 }
 
+function chooseCell() {
+    const readLine = require('readline');
+    const rl = readLine.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+    let cellRange = [];
+    rl.question("Which row do you want to dig? ", function(rowAnswer) {
+        for (i = 0; i < grid.length; i++) {
+            if (grid[i][0] == rowAnswer) {
+                cellRange.push(i);
+            } else {
+                continue;
+            }
+        }
+        rl.question("Which column do you want to dig? ", function(colAnswer) {
+            for (n = 0; n < cellRange.length; n++) {
+                if (grid[cellRange[n]][1] != colAnswer) {
+                    cellRange.splice([n], 1);
+                    n--;
+                } else {
+                    continue;
+                }
+            }
+            rl.close();
+            let chosenCell = cellRange[0];
+            if (grid[chosenCell][2] != 9) {
+                console.log("That patch has " + grid[chosenCell][2] + " adjacent mines");
+            } else if (grid[chosenCell][2] == 9) {
+                console.log("You hit a mine!");
+            }
+        });
+    });
+}
+
 createGrid(rows, columns, minesNumber);
 setMines(grid, minesNumber);
 placeNumbers(grid);
+chooseCell();
