@@ -32,6 +32,8 @@ This is Minesweeper. The game logic will be coded in JS, the UI will be made in 
     - [x] Make identify the chosen cell
     - [x] Display numbers & mines
 - [ ] Create end-game condition
+    - [ ] Start with artificial end-gane condition
+    - [ ] Make end-game condition the relalation of all non-mines
 - [ ] Flagging cells
 - [ ] Create win condition
 - [ ] Create lose condition
@@ -41,12 +43,3 @@ This is Minesweeper. The game logic will be coded in JS, the UI will be made in 
 - [ ] Calculate leaderboard
 - [ ] Display leaderboard after each game
 - [ ] Convert to React UI
-
-## DOING
-- [ ] 
-
-## DONE
-- [ ] 
-
-## STUCK
-- [ ] 

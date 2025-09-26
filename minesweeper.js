@@ -62,7 +62,7 @@ function placeNumbers(grid) {
     }
 }
 
-function chooseCell() {
+function chooseCell(callback) {
     const readLine = require('readline');
     const rl = readLine.createInterface({
         input: process.stdin,
@@ -88,16 +88,36 @@ function chooseCell() {
             }
             rl.close();
             let chosenCell = cellRange[0];
-            if (grid[chosenCell][2] != 9) {
-                console.log("That patch has " + grid[chosenCell][2] + " adjacent mines");
-            } else if (grid[chosenCell][2] == 9) {
-                console.log("You hit a mine!");
-            }
+            let cellCode = grid[chosenCell][2];
+            callback(cellCode);
         });
     });
 }
 
-createGrid(rows, columns, minesNumber);
-setMines(grid, minesNumber);
-placeNumbers(grid);
-chooseCell();
+function revealCell(cellCode) {
+    if (cellCode != 9) {
+        console.log("That patch has " + cellCode + " adjacent mines");
+    } else if (cellCode == 9) {
+        console.log("You hit a mine!");
+    }
+}
+
+function runTurns(turns, callback) {
+    if (turns > 0) {
+        chooseCell(function(cellCode) {
+            revealCell(cellCode);
+            runTurns(turns - 1);
+            callback();
+        });
+    }
+}
+
+function runNewGame() {
+    createGrid(rows, columns, minesNumber);
+    setMines(grid, minesNumber);
+    placeNumbers(grid);
+    console.log(grid);
+    runTurns(3, function gameOverMessage() {console.log("Game Over!");});
+}
+
+runNewGame();
